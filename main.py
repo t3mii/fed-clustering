@@ -1,4 +1,6 @@
 import requests
+import pandas as pd
+
 
 url = "https://www.federalregister.gov/api/v1/documents.json"
 
