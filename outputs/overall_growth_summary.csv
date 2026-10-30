@@ -1,0 +1,11 @@
+cluster,topic,count_2021,count_2025,growth_pct,share_2021,share_2025,share_change_pp,annual_share_slope
+9,Mixed regulatory topics,2305,2058,-10.72,43.08,52.25,9.17,2.85
+0,Civil monetary penalties,59,50,-15.25,1.1,1.27,0.17,0.04
+7,Foreign sanctions,65,44,-32.31,1.21,1.12,-0.1,0.02
+5,Airport airspace,319,221,-30.72,5.96,5.61,-0.35,-0.17
+2,Federal acquisition,110,62,-43.64,2.06,1.57,-0.48,-0.05
+6,Maritime safety,344,231,-32.85,6.43,5.86,-0.56,-0.2
+4,Air quality,515,314,-39.03,9.62,7.97,-1.65,-0.43
+1,Aviation navigation,209,80,-61.72,3.91,2.03,-1.87,-0.62
+3,Aircraft safety,856,553,-35.4,16.0,14.04,-1.96,-0.82
+8,Wildlife conservation,569,326,-42.71,10.63,8.28,-2.36,-0.61

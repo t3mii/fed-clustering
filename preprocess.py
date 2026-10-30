@@ -3,6 +3,7 @@ import joblib
 from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
 from scipy.sparse import save_npz
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
 
 DATA_PATH = Path("data/federal_register_documents.csv")
@@ -22,8 +23,23 @@ def preprocess_data():
 
     df = df[df["combined_text"].str.strip() != ""].copy()
 
+
+    # Common Federal Register and regulatory language
+    custom_stopwords = {
+        "rule", "rules", "regulation", "regulations",
+        "federal", "department", "commission",
+        "final", "proposed", "document",
+        "act", "pursuant", "hereby",
+        "thereof", "therein", "accordance",
+        "applicable", "authority", "amendment",
+        "amendments", "part", "section",
+        "sections", "subpart", "paragraph"
+    }
+
+    all_stopwords = list(ENGLISH_STOP_WORDS.union(custom_stopwords))
+
     vectorizer = TfidfVectorizer(
-        stop_words="english",
+        stop_words=all_stopwords,
         ngram_range=(1, 2),
         min_df=5,
         max_df=0.85,
@@ -31,6 +47,7 @@ def preprocess_data():
     )
 
     X = vectorizer.fit_transform(df["combined_text"])
+
 
     # Save processed data
     df.to_csv(OUTPUT_PATH / "processed_documents.csv", index=False)
