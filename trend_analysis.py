@@ -93,7 +93,7 @@ def analyze_trends(data, name):
         output_dir / f"{name}_growth_summary.csv"
     )
 
-    print(f"\n===== {name.upper()} =====")
+  
     print("Total documents by year:")
     print(totals.to_string())
     print("\nGrowth ranking:")

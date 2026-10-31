@@ -56,9 +56,9 @@ def retrieve_documents():
             print(
                 f"Completed {year}-{month:02d}: "
                 f"{len(all_documents)} documents collected so far"
-            )
+            ) #just so I can know what is being done
 
-            time.sleep(0.2)
+            time.sleep(0.2) #leave some requests gaps
 
     df = pd.DataFrame(all_documents)
 
@@ -66,7 +66,6 @@ def retrieve_documents():
 
     df.to_csv("federal_register_documents.csv", index=False)
 
-    print("\nDownload complete!")
     print("Total unique documents:", len(df))
     print(df[["document_number", "title", "publication_date"]].head())
     df.to_csv("data/federal_register_documents.csv", index=False)

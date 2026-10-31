@@ -67,4 +67,3 @@ print("\nBest number of clusters:", best_k)
 print("\nCluster sizes:")
 print(df["cluster"].value_counts().sort_index())
 
-print("\nSaved clustered documents!")
